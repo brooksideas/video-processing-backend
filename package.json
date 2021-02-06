@@ -10,7 +10,8 @@
   "author": "Brook Tarekegn",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ffmpeg": "0.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
