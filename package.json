@@ -13,6 +13,8 @@
     "express": "^4.17.1",
     "ffmpeg": "0.0.4",
     "mongoose": "^5.11.15",
+    "socket.io": "^3.1.1",
+    "socket.io-client": "^3.1.1",
     "video-stitch": "^1.6.0"
   },
   "devDependencies": {
