@@ -116,7 +116,10 @@ router.get('/all', [cors], async (req, res) => {
             });
 
         });
-        res.send('All frames returned Successfully!');
+
+
+        res.json({frames});
+        res.end('All frames returned Successfully!');
     } catch (e) {
         console.log(e.code);
         console.log(e.msg);

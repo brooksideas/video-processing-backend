@@ -10,11 +10,11 @@
   "author": "Brook Tarekegn",
   "license": "ISC",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "express": "^4.17.1",
     "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
     "mongoose": "^5.11.15",
-    "socket.io": "^3.1.1",
-    "socket.io-client": "^3.1.1",
     "video-stitch": "^1.6.0"
   },
   "devDependencies": {
