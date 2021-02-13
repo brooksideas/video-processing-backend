@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 app.use('/api/video', video);
 
 // DB connection
-mongoose.connect('mongodb://localhost/video-store')
+mongoose.connect('mongodb://localhost/video-store',{useFindAndModify: false })
   .then(() => console.log('Connected to MongoDB'))
   .catch(error => console.log('Could not connect to MongoDB', error))
 

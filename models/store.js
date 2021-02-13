@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const storeSchema = new mongoose.Schema({
+    name: { type: String, required: true },
     start_time: { type: String, required: true },
     end_time: { type: String, required: true },
     pathstamp: { type: String, required: true },
