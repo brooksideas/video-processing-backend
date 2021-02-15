@@ -97,7 +97,7 @@ router.get('/all', [cors], async (req, res) => {
             //Files total length
             var file_path = path.join(__dirname + `../../../data/${specific_timestamp}`);
             fs.readdir(file_path, async (err, files) => {
-            console.log('files path--->', file_path, files.length)
+
                 total_length = files.length;
                 // Even if the Frames extracted have been stored as binary in the database
                 // overwrite the binaries on multiple video edit
@@ -139,7 +139,7 @@ router.post('/cut', [cors], (req, res) => {
 
     try {
         fluentffmpeg.setFfmpegPath(ffmpegPath)
-        // console.log('CUT REQ----->', req.body)
+        
         // Name, Start and Duration are dynamic as per the request
         // Since you can overwrite any files below you can cut the video as many times as you like
         // to achieve this you need to Overwrite the Original file path on every edit instead of ..._edited 
@@ -248,7 +248,7 @@ router.post('/edit', [cors], async (req, res) => {
 router.post('/extract', [cors], async (req, res) => {
 
     // this should be dynamic per client side request
-    var specific_timestamp = '1613207979968'; // req.body.timestamp
+    var specific_timestamp = '1613209602442'; // req.body.timestamp
     var videoName = 'Cartoon.mp4'; // req.body.name
 
     try {
@@ -281,14 +281,14 @@ router.post('/extract', [cors], async (req, res) => {
                 file_name: 'my_frame_%t' //my_frame_%t_%s
             }, async function (error, files) {
                 if (!error)
-                  // Update the specified pathstamp to mongo since new extraction stamp
-                 var pathStamp = files[0].split('/')[3].split('_')[2]
-                 
-                 await Store.findOneAndUpdate({ timestamp: specific_timestamp }, {
-                    
+                    // Update the specified pathstamp to mongo since new extraction stamp
+                    var pathStamp = files[0].split('/')[3].split('_')[2]
+
+                await Store.findOneAndUpdate({ timestamp: specific_timestamp }, {
+
                     pathstamp: pathStamp
                 }, { new: true });
-                    console.log('Files Extraction finished', files)
+                console.log('Files Extraction finished', files)
 
             });
 
